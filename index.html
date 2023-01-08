@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        main {
+            float: left;
+            width: 30%;
+        }
+
+        aside {
+            float: left;
+            width: 70%;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="movies-view">
+        <label for="view">Page size</label>
+
+        <select name="view" id="view" onchange="change_view(this.value)">
+            <option value="3">3</option>
+            <option value="5" selected="selected">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+
+    <div id="search-bar">
+        <label for="search">Search TMDB by title</label>
+
+        <input id="search" type="text" value="300">
+        <button id="submit-search" onclick="">Search!</button>
+    </div>
+
+    <div id="pagination-buttons">
+        <button id="previous-button" style="display:none"> Prev </button>
+        <button id="first-button" style="display:none">First</button>
+        <div id="buttons-to-add" style="display:inline"></div>
+        <button id="last-button" style="display:none">Last</button>
+        <button id="next-button" style="display:none"> Next </button>
+    </div>
+
+    <main></main>
+    <aside></aside>
+</body>
+
+</html>
